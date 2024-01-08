@@ -1,0 +1,18 @@
+@import '/src/style/main.scss';
+
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  flex-wrap: wrap;
+
+  &__word {
+    display: inline-flex;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px;
+    font-size: 102px;
+  }
+}
