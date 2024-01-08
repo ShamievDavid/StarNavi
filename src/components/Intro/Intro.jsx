@@ -48,21 +48,10 @@ export const Intro = ({ phrase = initialPhrase }) => {
   return (
     <div className="intro">
       {phrase.split(' ').map((word) => (
-        <Word key={word} word={word} />
-      ))}
-    </div>
-  );
-};
-
-const Word = ({ word }) => {
-  const [isVisible, setIsVisible] = useState(true);
-  return (
-    <>
-      {isVisible && (
-        <p onMouseEnter={() => setIsVisible(false)} className="intro__word">
+        <p key={word} className="intro__word">
           {word}
         </p>
-      )}
-    </>
+      ))}
+    </div>
   );
 };
