@@ -1,0 +1,25 @@
+@import '/src/style/main.scss';
+
+.button {
+  width: 150px;
+  height: 40px;
+  @include flex-center;
+  border: none;
+  border-radius: 6px;
+  background-color: #0075d8;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: 0.3s;
+  opacity: 0.8;
+  box-sizing: border-box;
+
+  &:hover {
+    opacity: 1;
+    transition: 0.3s;
+  }
+
+  &:active {
+    background-color: #ffc0d9;
+  }
+}

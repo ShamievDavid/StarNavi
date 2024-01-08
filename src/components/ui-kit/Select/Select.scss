@@ -1,0 +1,58 @@
+@import '/src/style/main.scss';
+
+.select {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4px;
+
+  &__input {
+    height: 40px;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid rgb(181, 181, 181);
+    position: relative;
+    background-image: url('/assets/arrowDown.svg');
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    text-transform: capitalize;
+
+    &--opened {
+      background-image: url('/assets/arrowUp.svg');
+    }
+  }
+
+  &__selected {
+    color: black;
+  }
+
+  &__options {
+    width: 100%;
+    font-size: 14px;
+    padding: 14px 0;
+    background-color: white;
+    list-style: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    border: 1px solid gray;
+    transition: 2s ease;
+    text-transform: capitalize;
+    z-index: 100000;
+  }
+
+  &__option {
+    cursor: pointer;
+    margin-bottom: 5px;
+    padding: 6px 12px;
+    color: black;
+
+    &:hover {
+      background-color: gainsboro;
+    }
+
+    &--selected {
+      color: gainsboro;
+    }
+  }
+}

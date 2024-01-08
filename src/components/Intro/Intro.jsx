@@ -3,7 +3,8 @@ import './Intro.scss';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
-const initialPhrase = 'вітаю, я Давід. це моє тестове завдання для StarNavi ☺';
+const initialPhrase =
+  'вітаю, я Давід. і це моє тестове завдання для StarNavi ☺';
 const colors = [
   '#D9EDBF',
   '#FDFFAB',
@@ -14,6 +15,7 @@ const colors = [
   '#DED0B6',
   '#C1F2B0',
   '#CD8D7A',
+  '#FFC0D9',
 ];
 
 export const Intro = ({ phrase = initialPhrase }) => {

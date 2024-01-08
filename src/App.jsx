@@ -1,17 +1,33 @@
-import { Intro } from 'components';
+import { Game, Intro } from 'components';
 import './App.scss';
-import { useEffect, useState } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 function App() {
-  const [introHide, setIntroHide] = useState(false);
+  useGSAP(() => {
+    gsap.from('.intro', {
+      opacity: 1,
+      duration: 0.5,
+      ease: 'power2.inOut',
+      onComplete: () => {
+        gsap.to('.intro', {
+          opacity: 0,
+          delay: 5,
+          duration: 0.5,
+          ease: 'power2.inOut',
+        });
+      },
+    });
+  });
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIntroHide(true);
-    }, 7000);
-  }, []);
-
-  return <div className="app">{!introHide && <Intro />}</div>;
+  return (
+    <div className="app">
+      <>
+        {/* <Intro /> */}
+        <Game />
+      </>
+    </div>
+  );
 }
 
 export default App;
