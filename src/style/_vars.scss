@@ -1,1 +1,6 @@
 $main-font-color: #313237;
+$hovered-cell: #ffc0d9в;
+$field-width: 310px;
+$grid-width: var(--grid-columns); 
+$num: calc(var(--grid-columns));
+$cell-width: calc($field-width / var(--grid-columns));

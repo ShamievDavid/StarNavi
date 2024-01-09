@@ -2,3 +2,7 @@
 @import './mixins';
 @import './reset';
 @import './global';
+
+:root {
+  --grid-columns: 0;
+}

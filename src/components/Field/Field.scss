@@ -1,0 +1,18 @@
+@import '/src/style/main.scss';
+
+.field {
+  display: grid;
+  border: 1px solid;
+  pointer-events: none;
+  grid-template-columns: repeat(var(--grid-columns), $cell-width);
+
+  &__row {
+    display: flex;
+  }
+
+  &__cell {
+    width: 30px;
+    height: 30px;
+    background-color: lightgray;
+  }
+}

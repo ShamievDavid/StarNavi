@@ -1,1 +1,13 @@
-@import "./style/vars";
+@import './style/main.scss';
+
+.app {
+  width: 100vw;
+  height: 100vh;
+
+  &__game-container {
+    width: 100vw;
+    height: 100vh;
+
+    @include flex-center;
+  }
+}

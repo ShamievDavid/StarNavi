@@ -6,12 +6,12 @@ import gsap from 'gsap';
 function App() {
   useGSAP(() => {
     gsap.from('.intro', {
-      opacity: 1,
+      display: 'block',
       duration: 0.5,
       ease: 'power2.inOut',
       onComplete: () => {
         gsap.to('.intro', {
-          opacity: 0,
+          display: 'none',
           delay: 5,
           duration: 0.5,
           ease: 'power2.inOut',
@@ -24,7 +24,9 @@ function App() {
     <div className="app">
       <>
         {/* <Intro /> */}
-        <Game />
+        <div className="app__game-container">
+          <Game />
+        </div>
       </>
     </div>
   );

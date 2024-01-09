@@ -6,13 +6,17 @@
   @include flex-center;
   border: none;
   border-radius: 6px;
-  background-color: #0075d8;
+  background-color: #00a9f4;
   color: white;
   font-size: 16px;
   text-transform: uppercase;
   transition: 0.3s;
   opacity: 0.8;
   box-sizing: border-box;
+
+  &--active {
+    background-color: #ffc0d9;
+  }
 
   &:hover {
     opacity: 1;

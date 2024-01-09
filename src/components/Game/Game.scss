@@ -1,8 +1,8 @@
 @import '/src/style/main.scss';
 
 .game {
-  @include flex-center;
   flex-direction: column;
+  width: 310px;
 
   height: 100vh;
 
