@@ -6,6 +6,14 @@
   border-right: 1px solid black;
   border-bottom: 1px solid black;
 
+  &:nth-child(5n) {
+    border-right: none;
+  }
+
+  &:nth-last-child(-n + 5) {
+    border-bottom: none;
+  }
+
   &--hovered {
     background-color: $hovered-cell;
   }
