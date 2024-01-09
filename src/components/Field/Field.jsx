@@ -6,8 +6,6 @@ import classNames from 'classnames';
 export const Field = ({ cells, reset, start, setHoveredHistory }) => {
   const fieldRef = useRef(null);
 
-  console.log('cells', cells);
-
   useEffect(() => {
     if (fieldRef.current) {
       fieldRef.current.style.pointerEvents = start ? 'auto' : 'none';
