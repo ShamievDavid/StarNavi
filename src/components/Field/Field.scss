@@ -3,9 +3,13 @@
 .field {
   display: grid;
   border-left: 1px solid black;
-  border-top:1px solid black;
+  border-top: 1px solid black;
   pointer-events: none;
   grid-template-columns: repeat(var(--grid-columns), $cell-width);
+
+  &--huge {
+    grid-template-columns: repeat(var(--grid-columns), $cell-width-huge);
+  }
 
   &--hidden {
     display: none;

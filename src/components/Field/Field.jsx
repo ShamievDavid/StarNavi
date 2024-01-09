@@ -6,6 +6,8 @@ import classNames from 'classnames';
 export const Field = ({ cells, reset, start, setHoveredHistory }) => {
   const fieldRef = useRef(null);
 
+  console.log('cells', cells);
+
   useEffect(() => {
     if (fieldRef.current) {
       fieldRef.current.style.pointerEvents = start ? 'auto' : 'none';
@@ -34,11 +36,13 @@ export const Field = ({ cells, reset, start, setHoveredHistory }) => {
     return cellArray;
   };
 
-  const cellWidth = 310 / cells;
+  const cellWidth = cells < 50 ? 310 / cells : 620 / cells;
 
   return (
     <div
-      className={classNames(cells ? 'field' : 'field--hidden')}
+      className={classNames(cells ? 'field' : 'field--hidden', {
+        'field--huge': cells > 50,
+      })}
       ref={fieldRef}
     >
       {renderCells(cellWidth)}
