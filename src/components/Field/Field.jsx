@@ -1,8 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import './Field.scss';
 import { Cell } from 'components/Cell';
+import './Field.scss';
+import classNames from 'classnames';
 
-export const Field = ({ cells, reset, start }) => {
+export const Field = ({ cells, reset, start, setHoveredHistory }) => {
   const fieldRef = useRef(null);
 
   useEffect(() => {
@@ -19,11 +20,12 @@ export const Field = ({ cells, reset, start }) => {
         cellArray.push(
           <Cell
             key={`${i}-${j}`}
-            i={i}
-            j={j}
+            row={i}
+            col={j}
             cellWidth={cellWidth}
             reset={reset}
             cells={cells}
+            setHoveredHistory={setHoveredHistory}
           />
         );
       }
@@ -32,16 +34,11 @@ export const Field = ({ cells, reset, start }) => {
     return cellArray;
   };
 
-  // const styleObj = {
-  //   gridTemplateColumns: `repeat(${cells}, ${310 / cells}px)`,
-  // };
-
   const cellWidth = 310 / cells;
 
   return (
     <div
-      className="field"
-      // style={styleObj}
+      className={classNames(cells ? 'field' : 'field--hidden')}
       ref={fieldRef}
     >
       {renderCells(cellWidth)}

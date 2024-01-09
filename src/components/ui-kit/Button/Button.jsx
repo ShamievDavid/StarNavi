@@ -8,9 +8,11 @@ export const Button = ({
   handleOnClick,
   active,
   handleOnClickActive,
+  disabled,
 }) => {
   return (
     <button
+      disabled={disabled}
       className={classNames('button', {
         'button--active': active,
       })}

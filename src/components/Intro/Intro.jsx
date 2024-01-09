@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Intro.scss';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 const initialPhrase =
   'вітаю, я Давід. і це моє тестове завдання для StarNavi ☺';
+
 const colors = [
   '#D9EDBF',
   '#FDFFAB',
@@ -50,7 +51,10 @@ export const Intro = ({ phrase = initialPhrase }) => {
   return (
     <div className="intro">
       {phrase.split(' ').map((word) => (
-        <p key={word} className="intro__word">
+        <p
+          key={word}
+          className="intro__word"
+        >
           {word}
         </p>
       ))}

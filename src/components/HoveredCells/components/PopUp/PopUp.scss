@@ -1,0 +1,10 @@
+@import '/src/style/main.scss';
+
+.pop-up {
+  border-radius: 4px;
+  background-color: $pop-up-color;
+  margin-bottom: 4px;
+  height: $element-height;
+
+  @include flex-center;
+}

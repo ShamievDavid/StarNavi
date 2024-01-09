@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Select } from 'components/ui-kit';
-import './Game.scss';
+import { Field, HoveredCells } from 'components';
 import { useFetch } from 'hooks';
-import { Field } from 'components/Field';
+import './Game.scss';
 
 const MODES_ENDPOINT = 'https://60816d9073292b0017cdd833.mockapi.io/modes';
 
@@ -10,6 +10,7 @@ export const Game = () => {
   const [selectedMode, setSelectedMode] = useState(null);
   const [reset, setReset] = useState(false);
   const [start, setStart] = useState(false);
+  const [hoveredHistory, setHoveredHistory] = useState([]);
   const { loadData, data } = useFetch();
 
   useEffect(() => {
@@ -28,8 +29,6 @@ export const Game = () => {
 
     const root = document.documentElement;
 
-    console.log('fields', selectedModeObject.field);
-
     root.style.setProperty('--grid-columns', selectedModeObject.field);
 
     setSelectedMode(selectedModeObject);
@@ -40,33 +39,45 @@ export const Game = () => {
   const handleButtonClickActive = () => {
     setReset(!reset);
     setStart(!start);
+    setHoveredHistory([]);
   };
 
   return (
-    <div className="game">
-      <div className="game__header">
-        <div className="game__select">
-          <Select
-            options={data?.map((mode) => mode.name)}
-            setSelection={handleSelectedMode}
-            initialOption="pick mode"
-          />
+    <div className="game__wrapper">
+      <div className="game">
+        <div className="game__header">
+          <div className="game__select">
+            <Select
+              options={data?.map((mode) => mode.name)}
+              setSelection={handleSelectedMode}
+              initialOption="pick mode"
+            />
+          </div>
+
+          <div className="game__button">
+            <Button
+              title="start"
+              activeTitle="reset"
+              handleOnClick={() => setStart(true)}
+              handleOnClickActive={handleButtonClickActive}
+              active={start}
+              disabled={!selectedMode}
+            />
+          </div>
         </div>
 
-        <Button
-          title="start"
-          activeTitle="reset"
-          handleOnClick={() => setStart(true)}
-          handleOnClickActive={handleButtonClickActive}
-          active={start}
-        />
+        <div>
+          <Field
+            cells={selectedMode?.field}
+            reset={reset}
+            start={start}
+            setHoveredHistory={setHoveredHistory}
+            hoveredHistory={hoveredHistory}
+          />
+        </div>
       </div>
       <div>
-        <Field
-          cells={selectedMode?.field}
-          reset={reset}
-          start={start}
-        />
+        <HoveredCells cells={hoveredHistory} />
       </div>
     </div>
   );

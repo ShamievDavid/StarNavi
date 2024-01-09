@@ -2,11 +2,21 @@ import React, { useEffect, useState } from 'react';
 import './Cell.scss';
 import classNames from 'classnames';
 
-export const Cell = ({ i, j, cellWidth, reset, cells }) => {
+export const Cell = ({ row, col, cellWidth, reset, setHoveredHistory }) => {
   const [hovered, setHovered] = useState(false);
 
   const handleHover = () => {
-    console.log(i, j, cellWidth);
+    setHoveredHistory((prev) => {
+      if (
+        prev.some(([prevRow, prevCol]) => prevRow === row && prevCol === col)
+      ) {
+        return prev.filter(
+          ([prevRow, prevCol]) => !(prevRow === row && prevCol === col)
+        );
+      } else {
+        return [...prev, [row, col]];
+      }
+    });
     setHovered(!hovered);
   };
 

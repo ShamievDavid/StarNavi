@@ -1,5 +1,5 @@
-import { Game, Intro } from 'components';
 import './App.scss';
+import { Game, Intro } from 'components';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
@@ -11,10 +11,11 @@ function App() {
       ease: 'power2.inOut',
       onComplete: () => {
         gsap.to('.intro', {
+          opacity: 0,
           display: 'none',
-          delay: 5,
-          duration: 0.5,
-          ease: 'power2.inOut',
+          delay: 4,
+          duration: 2,
+          ease: 'none',
         });
       },
     });
@@ -23,7 +24,7 @@ function App() {
   return (
     <div className="app">
       <>
-        {/* <Intro /> */}
+        <Intro />
         <div className="app__game-container">
           <Game />
         </div>

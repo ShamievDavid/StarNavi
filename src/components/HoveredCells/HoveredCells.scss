@@ -1,0 +1,19 @@
+@import '/src/style/main.scss';
+
+.hovered-cells {
+  width: $field-width;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 20px;
+    height: $element-height;
+
+    @include flex-center;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

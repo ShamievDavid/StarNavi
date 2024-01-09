@@ -2,17 +2,12 @@
 
 .field {
   display: grid;
-  border: 1px solid;
+  border-left: 1px solid black;
+  border-top:1px solid black;
   pointer-events: none;
   grid-template-columns: repeat(var(--grid-columns), $cell-width);
 
-  &__row {
-    display: flex;
-  }
-
-  &__cell {
-    width: 30px;
-    height: 30px;
-    background-color: lightgray;
+  &--hidden {
+    display: none;
   }
 }
