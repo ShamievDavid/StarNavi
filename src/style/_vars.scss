@@ -1,11 +1,14 @@
-$main-font-color: #313237;
+//initial values for field
+
+
 $hovered-cell: #ffc0d9;
 $pop-up-color: #FFAD84 ;
-$field-width: 310px;
-$field-width-huge: 620px;
-$element-width: 150px;
-$element-height: 40px;
-$grid-width: var(--grid-columns); 
-$num: calc(var(--grid-columns));
+
+$field-width: var(--fieldWidth);
+$field-width-huge: var(--fieldWidthHuge);
+$grid-width: var(--grid-columns);
 $cell-width: calc($field-width / var(--grid-columns));
 $cell-width-huge: calc($field-width-huge / var(--grid-columns));
+
+$element-width: 150px;
+$element-height: 40px;

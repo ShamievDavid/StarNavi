@@ -34,6 +34,7 @@ export const Game = () => {
     setSelectedMode(selectedModeObject);
     setReset(!reset);
     setStart(false);
+    setHoveredHistory([]);
   };
 
   const handleButtonClickActive = () => {

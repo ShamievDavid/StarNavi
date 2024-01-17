@@ -34,12 +34,16 @@ export const Field = ({ cells, reset, start, setHoveredHistory }) => {
     return cellArray;
   };
 
-  const cellWidth = cells < 50 ? 310 / cells : 620 / cells;
+  const fieldWidth = 310;
+  const cellsQuantity = 50;
+
+  const cellWidth =
+    cells < cellsQuantity ? fieldWidth / cells : (fieldWidth * 2) / cells;
 
   return (
     <div
       className={classNames(cells ? 'field' : 'field--hidden', {
-        'field--huge': cells > 50,
+        'field--huge': cells > cellsQuantity,
       })}
       ref={fieldRef}
     >
