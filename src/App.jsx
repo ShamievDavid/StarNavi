@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="app">
       <>
-        {/* <Intro /> */}
+        <Intro />
         <div className="app__game-container">
           <Game />
         </div>
